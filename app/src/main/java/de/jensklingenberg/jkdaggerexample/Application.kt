@@ -1,10 +1,7 @@
 package de.jensklingenberg.jkdaggerexample
 
 import android.app.Application
-import de.jensklingenberg.jkdaggerexample.di.AppComponent
-import de.jensklingenberg.jkdaggerexample.di.AppModule
-import de.jensklingenberg.jkdaggerexample.di.DaggerAppComponent
-import de.jensklingenberg.jkdaggerexample.di.RemoteModule
+import de.jensklingenberg.jkdaggerexample.di.*
 
 class App:Application(){
 
@@ -16,7 +13,7 @@ class App:Application(){
     }
 
     fun initializeDagger() {
-        appComponent = DaggerAppComponent.builder()
+        appComponent = DaggerAppComponent.builder() //The DaggerAppComponent will be generated when you build the project
             .appModule(AppModule(this))
             .remoteModule(RemoteModule())
             .build()

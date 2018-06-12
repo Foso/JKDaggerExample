@@ -1,6 +1,5 @@
 package de.jensklingenberg.jkdaggerexample.di
 
-import android.arch.lifecycle.ViewModel
 import dagger.Component
 import de.jensklingenberg.jkdaggerexample.MainActivity
 

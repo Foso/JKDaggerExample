@@ -14,7 +14,7 @@ ext {
                      versionName   : '1.0.0']
 
 
-    libs = [
+    versions = [
             dagger_version   : '2.15',
             junit            : '4.12',
             supportLibVersion: '27.1.1',

@@ -28,7 +28,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$configuration.kotlin_version"
-    implementation "com.squareup.moshi:moshi-kotlin:${libs.moshikotlin}"
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.1'
@@ -36,16 +35,22 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation "io.reactivex.rxjava2:rxandroid:${libs.rxandroid}"
-    implementation "io.reactivex.rxjava2:rxjava:${libs.rxJava}"
-    implementation "com.squareup.retrofit2:converter-moshi:${libs.moshiConverterVersion}"
+    implementation "com.squareup.moshi:moshi-kotlin:${versions.moshikotlin}"
 
-    implementation "com.squareup.retrofit2:retrofit:${libs.retrofitVersion}"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${libs.rxjava2Adapter}"
 
-    implementation "com.google.dagger:dagger-android:${libs.dagger_version}"
-    implementation "com.google.dagger:dagger-android-support:${libs.dagger_version}"
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxJava}"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:converter-moshi:${versions.moshiConverterVersion}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${versions.rxjava2Adapter}"
+
+    //Dagger Dependencies
+    implementation "com.google.dagger:dagger-android:${versions.dagger_version}"
+    implementation "com.google.dagger:dagger-android-support:${versions.dagger_version}"
     // if you use the support libraries
-    kapt "com.google.dagger:dagger-android-processor:${libs.dagger_version}"
-    kapt "com.google.dagger:dagger-compiler:${libs.dagger_version}"
+    kapt "com.google.dagger:dagger-android-processor:${versions.dagger_version}"
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger_version}"
 }

@@ -1,11 +1,8 @@
 package de.jensklingenberg.jkdaggerexample
 
-import android.app.Application
-import android.arch.lifecycle.ViewModelProvider
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import de.jensklingenberg.jkdaggerexample.di.AppComponent
 import de.jensklingenberg.jkdaggerexample.model.Post
 import de.jensklingenberg.jkdaggerexample.network.TestApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -32,15 +29,11 @@ class MainActivity : AppCompatActivity() {
             .subscribe(object : DisposableSingleObserver<Response<List<Post>>>() {
                 override fun onSuccess(response: Response<List<Post>>) {
                     val list = response.body()
-Log.d("JKDaggerExample",list?.size.toString())
+                    Log.d("JKDaggerExample", list?.size.toString())
                 }
 
-                override fun onError(e: Throwable) {
-
-
-                }
+                override fun onError(e: Throwable) {}
             })
     }
-
-    }
+}
 
